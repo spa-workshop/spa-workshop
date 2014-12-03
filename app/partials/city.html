@@ -1,7 +1,14 @@
+<h2>Search</h2>
+<input type="text" data-ng-autocomplete="result" details="details" options="options"/> 
+
 <h1>{{this.cityName}}</h1>
 
 <h3>Forecast</h3>
-<div>{{this.forecast | json}}</div>
+<div>{{this.forecast.currently.icon}}</div>
+<div>{{this.forecast.currently.temperature}} degrees</div>
 
 <h3>News</h3>
-<div>{{this.news | json}}</div>
+<ul>
+  <div data-ng-repeat="point in this.news">
+    <li><a href={{point.href}}>{{point.title}}</a></li>
+</ul>
